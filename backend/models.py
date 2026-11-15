@@ -2,7 +2,7 @@ import sqlite3
 from pathlib import Path
 
 SCHEMA = Path(__file__).with_name("schema.sql")
-FIELDS = ("id", "title", "category", "location", "date", "photo_url")
+FIELDS = ("id", "title", "category", "found_at", "date", "photo_url")
 
 
 def connect(path=":memory:"):
