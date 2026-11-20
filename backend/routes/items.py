@@ -16,6 +16,6 @@ def list_items():
 def add_item():
     data = request.get_json()
     cur = current_app.db.execute(
-        "INSERT INTO items (title, category, location, date) VALUES (?, ?, ?, ?)",
-        (data["title"], data["category"], data["location"], data["date"]))
+        "INSERT INTO items (title, category, found_at, date) VALUES (?, ?, ?, ?)",
+        (data["title"], data["category"], data["found_at"], data["date"]))
     return jsonify({"id": cur.lastrowid}), 201
